@@ -38,10 +38,12 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000],
+	"forwardPorts": [5000,7000],
+
+	"portsAttributes": {"5000": {"label": "Math API"}, "7000": {"label": "Test port"}},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": ["pip3 install --user -r requirements.txt", "pip3 install --user -r dev_requirements.txt", "python api/math_api.py" ],
+	"postCreateCommand": ["pip3 install --user -r requirements.txt", "pip3 install --user -r dev_requirements.txt" ],
 
 	// "postStartCommand": "python api/math_api.py",
 
